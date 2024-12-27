@@ -18,6 +18,7 @@ public sealed class RepositoryDbContext : IdentityDbContext<AppUser>
   public DbSet<Rating> Ratings { get; set; }
   public DbSet<Comment> Comments { get; set; }
   public DbSet<Notification> Notifications { get; set; }
+  public DbSet<Favorite> Favorites { get; set; }
 
   protected override void OnModelCreating(ModelBuilder modelBuilder) {
     base.OnModelCreating(modelBuilder);

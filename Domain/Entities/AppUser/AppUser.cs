@@ -9,4 +9,5 @@ public class AppUser : IdentityUser
   public ICollection<Rating> Ratings { get; set; } = new List<Rating>();
   public ICollection<Category> Categories { get; set; } = new List<Category>();
   public ICollection<Notification> Notifications { get; set; } = new List<Notification>();
+  public ICollection<Favorite> Favorites { get; set; } = new List<Favorite>();
 }

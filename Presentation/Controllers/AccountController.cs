@@ -66,8 +66,9 @@ namespace Presentation.Controllers
 
           var authClaims = new List<Claim>
           {
-            new Claim(JwtRegisteredClaimNames.Sub, user.UserName!),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            new Claim(ClaimTypes.NameIdentifier, user.Id), // Add user ID here
+            new Claim(JwtRegisteredClaimNames.Sub, user.UserName!), // Add username
+            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()) // Unique token ID
           };
 
           authClaims.AddRange(userRoles.Select(role => new Claim(ClaimTypes.Role, role)));
